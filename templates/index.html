@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Bosh sahifa</title>
-</head>
-<body>
-<h1>Bosh sahifa</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        {% for meva in mevalar %}
+        <div class="card" style="width: 18rem;">
+            <img src={{meva.img_url}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{meva.title}}</h5>
+                <p class="card-text">{{meva.desc}}</p>
+                <a href="#" class="btn btn-primary">{{meva.price}} so'm</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
