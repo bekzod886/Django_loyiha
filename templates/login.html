@@ -1,0 +1,62 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% block content%}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<h1 align="center">Login Page</h1>
+
+<!--<form class="container" style="width:30%" method="POST" action="praktika/">-->
+<!--  <div class="mb-3">-->
+<!--    <label for="exampleInputEmail1" class="form-label">Email address</label>-->
+<!--    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
+<!--    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+<!--  </div>-->
+<!--  <div class="mb-3">-->
+<!--    <label for="exampleInputPassword1" class="form-label">Password</label>-->
+<!--    <input name="password" type="password" class="form-control" id="exampleInputPassword1">-->
+<!--  </div>-->
+<!--  <div class="mb-3 form-check">-->
+<!--    <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--    <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
+<!--  </div>-->
+<!--  <button type="submit" class="btn btn-primary">Kirish</button>-->
+<!--</form>-->
+
+<form class=""  method="GET" action="praktika/">
+  <div class="imgcontainer">
+    <img src="{% static 'avatar.jpg' %}" alt="Avatar" class="avatar" style="height:30%">
+  </div>
+
+  <div class="container" style="width:30%;">
+    <label for="uname"><b>Username</b></label>
+
+    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1; width:30%;">
+    <button type="reset" class="cancelbtn">Tozalash</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+{% endblock content%}
+</body>
+</html>
