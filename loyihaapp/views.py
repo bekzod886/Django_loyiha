@@ -47,11 +47,28 @@ def register(request):
         return render(request, 'register.html')
 
 
-def login(request):
-    return render(request, 'login.html')
 
 
 def praktika(request):
-    email = request.GET['email']
-    password = request.GET['password']
-    return render(request, 'praktika.html', {'email': email, 'password': password})
+
+    return render(request, 'praktika.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+        else:
+            messages.info(request, 'Foydalanuvchi mavjud emas!')
+            return redirect('login')
+    else:
+        return render(request, 'login.html')
